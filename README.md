@@ -16,6 +16,24 @@ And that's it. You should now be able to use this step in your `wercker.yml` fil
 
 Step has no option.
 
-## Example
+## Examples
 
-    - git-tag
+Example usage in `wercker.yml`:
+
+    box: wercker/nodejs
+    build:
+        steps:
+            - npm-install
+            - npm-test
+    deploy:
+        steps:
+            - script:
+                name: My deploy
+                code: echo 'Deploying to $WERCKER_DEPLOYTARGET_NAME!'
+        
+        after-steps:
+            - git-tag
+
+Example $GIT_REMOTE variable (not a real token):
+    
+    https://a12k3j1ljlfdsa233143@github.com/hijonathan/step-git-tag.git
