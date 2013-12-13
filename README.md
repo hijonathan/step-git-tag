@@ -34,6 +34,6 @@ Example usage in `wercker.yml`:
         after-steps:
             - git-tag
 
-Example $GIT_REMOTE variable (not a real token):
+Example `$GIT_REMOTE` variable (not a real token):
     
     https://a12k3j1ljlfdsa233143@github.com/hijonathan/step-git-tag.git
