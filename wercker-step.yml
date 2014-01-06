@@ -1,4 +1,4 @@
 name : git-tag
-version: 0.2.3
+version: 0.2.4
 display-name: Tag your Wercker deploy
 type: deploy
