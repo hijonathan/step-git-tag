@@ -1,3 +1,7 @@
+if [ ! -d ".git" ]; then
+    fail "no git repository found"
+fi
+
 if [ $DEPLOY != "true" ]; then
     fail 'this step is only valid for deploys'
 fi
