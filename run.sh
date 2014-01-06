@@ -17,7 +17,7 @@ if [ "$WERCKER_RESULT" = "passed" ]; then
     tagname="deploy-$WERCKER_DEPLOYTARGET_NAME"
     
     # Delete the tag if it exists, otherwise just skip
-    if (git tag -l | grep "$tagname");
+    if (git tag -l | grep "$tagname" &> /dev/null);
     then
         git tag -d "$tagname"
         debug 'Deleted existing $tagname'
