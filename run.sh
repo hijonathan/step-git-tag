@@ -16,9 +16,12 @@ if [ "$WERCKER_RESULT" = "passed" ]; then
     if (git tag -l | grep "$tagname");
     then
         git tag -d "$tagname"
+        debug 'Deleted existing $tagname'
     fi
 
     # Tag your commit.
     git tag -a deploy-$WERCKER_DEPLOYTARGET_NAME $WERCKER_GIT_COMMIT -m "Wercker deploy by $WERCKER_STARTED_BY :articulated_lorry:."
     git push --tags $GIT_REMOTE
+else
+    info "skipping git tag because the deploy result is $WERCKER_RESULT"
 fi
