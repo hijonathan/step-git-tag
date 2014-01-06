@@ -1,3 +1,7 @@
+if [ $DEPLOY != "true" ]; then
+    fail 'this step is only valid for deploys'
+fi
+
 # Configure Git.
 if [ "$WERCKER_RESULT" = "passed" ]; then
     # Configure git
