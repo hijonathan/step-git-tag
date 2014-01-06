@@ -1,4 +1,4 @@
-# Wercker Git Tag Step
+# Wercker Git Tag Step  [![wercker status](https://app.wercker.com/status/39a801a248f0f43dc0c74600802501ae "wercker status")](https://app.wercker.com/project/bykey/39a801a248f0f43dc0c74600802501ae)
 
 Updates git tags so you know what's currently deployed.
 
@@ -30,10 +30,10 @@ Example usage in `wercker.yml`:
             - script:
                 name: My deploy
                 code: echo 'Deploying to $WERCKER_DEPLOYTARGET_NAME!'
-        
+
         after-steps:
             - git-tag
 
 Example `$GIT_REMOTE` variable (not a real token):
-    
+
     https://a12k3j1ljlfdsa233143@github.com/hijonathan/step-git-tag.git
